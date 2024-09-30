@@ -1,6 +1,5 @@
 package ventanas;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,11 +36,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		contentPane.add(btnOption1);
 		
 		btnOption2 = new JButton("Opción 2: Ping Machine");
-		btnOption2.setBounds(272, 201, 208, 23);
+		btnOption2.setBounds(272, 199, 208, 23);
 		contentPane.add(btnOption2);
 		
 		btnOption3 = new JButton("Opción 3: Lanzar comandos");
-		btnOption3.setBounds(272, 257, 208, 23);
+		btnOption3.setBounds(272, 244, 208, 23);
 		contentPane.add(btnOption3);
 		
 		lblTitle = new JLabel("GESTIÓN DE VENTANAS PSP");
@@ -65,7 +64,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		if(e.getSource().equals(btnOption1)) {
 			
 		}else if(e.getSource().equals(btnOption2)) {
-			
+			VentanaPing vPing = new VentanaPing();
+			vPing.setVisible(true);
+			this.dispose();
 		}else if(e.getSource().equals(btnOption3)) {
 			
 		}else if(e.getSource().equals(btnExit)) {
