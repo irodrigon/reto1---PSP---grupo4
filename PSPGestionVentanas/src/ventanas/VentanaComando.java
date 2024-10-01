@@ -4,16 +4,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
+
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import javax.swing.BorderFactory;
+
 import javax.swing.JButton;
 
 public class VentanaComando extends JFrame implements ActionListener {
@@ -30,15 +34,18 @@ public class VentanaComando extends JFrame implements ActionListener {
         setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaComando.class.getResource("/resources/small-computer.png")));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 755, 440);
+
         setLocationRelativeTo(null);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setBackground(new Color(70, 130, 180));
 
+
         setContentPane(contentPane);
         contentPane.setLayout(null);
         
         lblTitle = new JLabel("COMMAND EXECUTOR:");
+
         lblTitle.setBounds(233, 43, 286, 24);
         lblTitle.setHorizontalAlignment(JLabel.CENTER);
 		lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 25));
@@ -53,10 +60,12 @@ public class VentanaComando extends JFrame implements ActionListener {
         
         textFieldCommand = new JTextField();
         textFieldCommand.setBounds(351, 96, 303, 30);
+
         contentPane.add(textFieldCommand);
         textFieldCommand.setColumns(10);
         
         btnExecute = new JButton("Ejecutar");
+
         btnExecute.setBounds(65, 172, 589, 36);
         btnExecute.setFont(new Font("Segoe UI", Font.BOLD, 16));
 	    btnExecute.setBackground(new Color(70, 130, 180));
@@ -76,6 +85,7 @@ public class VentanaComando extends JFrame implements ActionListener {
 	    btnVolver.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
 	    btnVolver.setPreferredSize(new Dimension(180, 45));
 	    btnVolver.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         contentPane.add(btnVolver);
         
         btnExecute.addActionListener(this);
@@ -103,4 +113,6 @@ public class VentanaComando extends JFrame implements ActionListener {
             this.dispose();
         }
     }
+
 }
+
