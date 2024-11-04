@@ -3,40 +3,88 @@ package com.tartanga.grupo4.model;
 import java.io.Serializable;
 
 /**
- * The {@code User} class represents a system user.
- * This class stores relevant user information such as username, password, name, street,
- * active status, city, and zip code. It implements the {@code Serializable} interface
- * to allow serialization of {@code User} objects.
+ * The {@code User} class represents a system user and contains various attributes 
+ * related to the user's personal and account information. 
+ * <p>
+ * The attributes include:
+ * <ul>
+ *   <li>{@code username}: The username of the user.</li>
+ *   <li>{@code password}: The user's password.</li>
+ *   <li>{@code name}: The full name of the user.</li>
+ *   <li>{@code street}: The street address of the user.</li>
+ *   <li>{@code active}: A {@code Boolean} value indicating if the user's account is active.</li>
+ *   <li>{@code city}: The city where the user resides.</li>
+ *   <li>{@code zip}: The zip code associated with the user's address.</li>
+ * </ul>
+ * This class implements the {@code Serializable} interface to allow instances 
+ * to be serialized and transmitted across different contexts.
+ * <p>
+ * There are two constructors available:
+ * <ul>
+ *   <li>A parameterized constructor that initializes all the user attributes.</li>
+ *   <li>An empty constructor that initializes all attributes to {@code null}.</li>
+ * </ul>
+ * Additionally, the class provides getter and setter methods for each attribute, 
+ * along with a {@code toString} method that returns a string representation 
+ * of the {@code User} object.
+ * </p>
  * 
- * This class has two constructors: one with parameters and one empty.
- * The parameterized constructor initializes all the class attributes,
- * while the empty constructor initializes the attributes with {@code null} values.
- * 
- * The class also provides getter and setter methods for each attribute, as well
- * as a {@code toString} method to provide a string representation of a {@code User} object.
+ * Example usage:
+ * <pre>
+ *     User user = new User("username123", "password456", "John Doe", 
+ *                          "1234 Elm Street", true, "Springfield", 12345);
+ *     System.out.println(user);
+ * </pre>
  * 
  * @author egure
  */
 public class User implements Serializable {
-    
+
+    /**
+     * The user's unique username.
+     */
     private String username;
+
+    /**
+     * The user's password, which should be kept secure.
+     */
     private String password;
+
+    /**
+     * The full name of the user.
+     */
     private String name;
+
+    /**
+     * The street address of the user.
+     */
     private String street;
+
+    /**
+     * Indicates if the user's account is currently active.
+     */
     private Boolean active;
+
+    /**
+     * The city where the user resides.
+     */
     private String city;
+
+    /**
+     * The zip code for the user's address.
+     */
     private Integer zip;
 
     /**
-     * Constructor that initializes a {@code User} object with all specified attributes.
-     *
+     * Constructs a {@code User} object with all specified attributes.
+     * 
      * @param username The username of the user.
      * @param password The user's password.
-     * @param name The name of the user.
+     * @param name The full name of the user.
      * @param street The street address of the user.
      * @param active The active status of the user.
-     * @param city The user's city.
-     * @param zip The user's zip code.
+     * @param city The city where the user lives.
+     * @param zip The zip code of the user's address.
      */
     public User(String username, String password, String name, String street, Boolean active, String city, Integer zip) {
         this.username = username;
@@ -47,9 +95,9 @@ public class User implements Serializable {
         this.city = city;
         this.zip = zip;
     }
-    
+
     /**
-     * Empty constructor that initializes a {@code User} object with all attributes set to {@code null}.
+     * Constructs a {@code User} object with all attributes initialized to {@code null}.
      */
     public User() {
         this.username = null;
@@ -64,7 +112,7 @@ public class User implements Serializable {
     /**
      * Gets the username of the user.
      * 
-     * @return the username of the user.
+     * @return The username of the user.
      */
     public String getUsername() {
         return username;
@@ -82,7 +130,7 @@ public class User implements Serializable {
     /**
      * Gets the password of the user.
      * 
-     * @return the password of the user.
+     * @return The password of the user.
      */
     public String getPassword() {
         return password;
@@ -98,16 +146,16 @@ public class User implements Serializable {
     }
 
     /**
-     * Gets the name of the user.
+     * Gets the full name of the user.
      * 
-     * @return the name of the user.
+     * @return The name of the user.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets the name of the user.
+     * Sets the full name of the user.
      * 
      * @param name The name to set.
      */
@@ -116,18 +164,18 @@ public class User implements Serializable {
     }
 
     /**
-     * Gets the street of the user.
+     * Gets the street address of the user.
      * 
-     * @return the street of the user.
+     * @return The street address of the user.
      */
     public String getStreet() {
         return street;
     }
 
     /**
-     * Sets the street of the user.
+     * Sets the street address of the user.
      * 
-     * @param street The street to set.
+     * @param street The street address to set.
      */
     public void setStreet(String street) {
         this.street = street;
@@ -136,7 +184,7 @@ public class User implements Serializable {
     /**
      * Gets the active status of the user.
      * 
-     * @return the active status of the user.
+     * @return The active status of the user.
      */
     public Boolean getActive() {
         return active;
@@ -154,7 +202,7 @@ public class User implements Serializable {
     /**
      * Gets the city of the user.
      * 
-     * @return the city of the user.
+     * @return The city of the user.
      */
     public String getCity() {
         return city;
@@ -172,7 +220,7 @@ public class User implements Serializable {
     /**
      * Gets the zip code of the user.
      * 
-     * @return the zip code of the user.
+     * @return The zip code of the user.
      */
     public Integer getZip() {
         return zip;
@@ -190,7 +238,7 @@ public class User implements Serializable {
     /**
      * Returns a string representation of the {@code User} object.
      * 
-     * @return a string representation of the user.
+     * @return A string representation of the user.
      */
     @Override
     public String toString() {
@@ -204,5 +252,4 @@ public class User implements Serializable {
                ", zip=" + zip + 
                '}';
     }
-
 }
